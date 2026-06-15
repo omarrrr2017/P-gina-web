@@ -80,6 +80,11 @@
             transition: 0.3s;
         }
 
+        /* AJUSTE PARA ENLACES ANCLA (Evita que el menú fijo tape el título) */
+        section {
+            scroll-margin-top: 70px; 
+        }
+
         /* SECCIÓN INICIO (HERO) */
         .hero-section {
             background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200') no-repeat center center/cover;
@@ -119,7 +124,7 @@
         /* CONTENEDOR BUSCADOR */
         .search-container {
             max-width: 600px;
-            margin: 40px auto 10px auto;
+            margin: 30px auto 10px auto;
             padding: 0 20px;
             position: relative;
         }
@@ -151,7 +156,8 @@
         .seccion-titulo {
             text-align: center;
             color: #1e3c72;
-            margin-top: 50px;
+            margin-top: 40px;
+            margin-bottom: 10px;
             font-size: 2rem;
         }
 
@@ -218,7 +224,7 @@
         .badge.publica { background: #e8f5e9; color: #2e7d32; }
         .badge.privada { background: #fff3e0; color: #ef6c00; }
 
-        /* Botones con Ripple Effect */
+        /* Botones */
         .btn-info {
             background: #1e3c72;
             color: white;
@@ -422,7 +428,7 @@
     </button>
     <ul class="nav-links" id="navLinks">
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#universidades">Universidades</a></li>
+        <li><a href="#seccion-universidades">Universidades</a></li>
         <li><a href="#contacto">Contacto</a></li>
     </ul>
 </header>
@@ -431,138 +437,140 @@
 <section id="inicio" class="hero-section">
     <h2>Encuentra tu Futuro Universitario</h2>
     <p>Explora de forma interactiva los pros, contras y ubicaciones de las 12 instituciones públicas y privadas más importantes del país.</p>
-    <a href="#universidades" class="btn-cta">Comenzar Exploración</a>
+    <a href="#seccion-universidades" class="btn-cta">Comenzar Exploración</a>
 </section>
 
 <!-- SECCIÓN UNIVERSIDADES -->
-<h2 class="seccion-titulo">Listado de Universidades</h2>
-<div class="search-container">
-    <span class="material-icons">search</span>
-    <input type="text" id="searchBox" class="search-box" placeholder="Buscar por nombre o ubicación (ej. Monterrey, Puebla, UNAM)...">
-</div>
-
-<section class="contenedor" id="universidades">
-
-    <div class="card" data-nombre="UNAM" data-tipo="publica" data-ventajas="Máximo prestigio nacional, enorme oferta de actividades culturales y deportivas, red de contactos global." data-desventajas="Alta saturación en planteles, procesos burocráticos lentos, alta competencia para ingresar.">
-        <div>
-            <span class="badge publica">Pública</span>
-            <h2>UNAM</h2>
-            <p>Universidad Nacional Autónoma de México</p>
-            <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>CDMX</p>
-        </div>
-        <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
+<section id="seccion-universidades">
+    <h2 class="seccion-titulo">Listado de Universidades</h2>
+    <div class="search-container">
+        <span class="material-icons">search</span>
+        <input type="text" id="searchBox" class="search-box" placeholder="Buscar por nombre o ubicación (ej. Monterrey, Puebla, UNAM)...">
     </div>
 
-    <div class="card" data-nombre="IPN" data-tipo="publica" data-ventajas="Excelente nivel en ingenierías y ciencias exactas, fuerte vinculación industrial, costos muy accesibles." data-desventajas="Infraestructura antigua en ciertos planteles, alta exigencia académica con pocos apoyos remediales.">
-        <div>
-            <span class="badge publica">Pública</span>
-            <h2>IPN</h2>
-            <p>Instituto Politécnico Nacional</p>
-            <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>CDMX</p>
-        </div>
-        <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
-    </div>
+    <div class="contenedor" id="universidadesGrid">
 
-    <div class="card" data-nombre="UAM" data-tipo="publica" data-ventajas="Sistema trimestral dinámico, profesores de tiempo completo con perfil de investigadores, enfoque social." data-desventajas="Huelgas institucionales esporádicas, el ritmo trimestral puede resultar estresante o acelerado.">
-        <div>
-            <span class="badge publica">Pública</span>
-            <h2>UAM</h2>
-            <p>Universidad Autónoma Metropolitana</p>
-            <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>CDMX</p>
+        <div class="card" data-nombre="UNAM" data-tipo="publica" data-ventajas="Máximo prestigio nacional, enorme oferta de actividades culturales y deportivas, red de contactos global." data-desventajas="Alta saturación en planteles, procesos burocráticos lentos, alta competencia para ingresar.">
+            <div>
+                <span class="badge publica">Pública</span>
+                <h2>UNAM</h2>
+                <p>Universidad Nacional Autónoma de México</p>
+                <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>CDMX</p>
+            </div>
+            <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
         </div>
-        <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
-    </div>
 
-    <div class="card" data-nombre="ITESM" data-tipo="privada" data-ventajas="Infraestructura tecnológica de vanguardia, bolsa de trabajo internacional, modelo educativo enfocado al emprendimiento." data-desventajas="Costos de colegiatura sumamente elevados, alta presión académica y financiera si cuentas con beca-crédito.">
-        <div>
-            <span class="badge privada">Privada</span>
-            <h2>ITESM</h2>
-            <p>Tecnológico de Monterrey</p>
-            <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Monterrey</p>
+        <div class="card" data-nombre="IPN" data-tipo="publica" data-ventajas="Excelente nivel en ingenierías y ciencias exactas, fuerte vinculación industrial, costos muy accesibles." data-desventajas="Infraestructura antigua en ciertos planteles, alta exigencia académica con pocos apoyos remediales.">
+            <div>
+                <span class="badge publica">Pública</span>
+                <h2>IPN</h2>
+                <p>Instituto Politécnico Nacional</p>
+                <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>CDMX</p>
+            </div>
+            <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
         </div>
-        <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
-    </div>
 
-    <div class="card" data-nombre="UDG" data-tipo="publica" data-ventajas="Fuerte presencia en todo el estado de Jalisco, excelente comunidad de investigación, alta oferta cultural." data-desventajas="Gran demanda de ingreso que deja fuera a muchos aspirantes, centralización de trámites complejos.">
-        <div>
-            <span class="badge publica">Pública</span>
-            <h2>UDG</h2>
-            <p>Universidad de Guadalajara</p>
-            <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Guadalajara</p>
+        <div class="card" data-nombre="UAM" data-tipo="publica" data-ventajas="Sistema trimestral dinámico, profesores de tiempo completo con perfil de investigadores, enfoque social." data-desventajas="Huelgas institucionales esporádicas, el ritmo trimestral puede resultar estresante o acelerado.">
+            <div>
+                <span class="badge publica">Pública</span>
+                <h2>UAM</h2>
+                <p>Universidad Autónoma Metropolitana</p>
+                <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>CDMX</p>
+            </div>
+            <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
         </div>
-        <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
-    </div>
 
-    <div class="card" data-nombre="BUAP" data-tipo="publica" data-ventajas="Complejos universitarios modernos y seguros, gran reconocimiento regional, excelentes programas de becas." data-desventajas="Cupos limitados en el área de la salud, tránsito complicado en los alrededores de Ciudad Universitaria Puebla.">
-        <div>
-            <span class="badge publica">Pública</span>
-            <h2>BUAP</h2>
-            <p>Benemérita Universidad Autónoma de Puebla</p>
-            <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Puebla</p>
+        <div class="card" data-nombre="ITESM" data-tipo="privada" data-ventajas="Infraestructura tecnológica de vanguardia, bolsa de trabajo internacional, modelo educativo enfocado al emprendimiento." data-desventajas="Costos de colegiatura sumamente elevados, alta presión académica y financiera si cuentas con beca-crédito.">
+            <div>
+                <span class="badge privada">Privada</span>
+                <h2>ITESM</h2>
+                <p>Tecnológico de Monterrey</p>
+                <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Monterrey</p>
+            </div>
+            <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
         </div>
-        <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
-    </div>
 
-    <div class="card" data-nombre="UAEM" data-tipo="publica" data-ventajas="Amplia cobertura en el Estado de México, buena oferta de educación a distancia, certificación constante de carreras." data-desventajas="Presupuesto variable que afecta el mantenimiento de prepas y facultades periféricas.">
-        <div>
-            <span class="badge publica">Pública</span>
-            <h2>UAEM</h2>
-            <p>Universidad Autónoma del Estado de México</p>
-            <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Estado de México</p>
+        <div class="card" data-nombre="UDG" data-tipo="publica" data-ventajas="Fuerte presencia en todo el estado de Jalisco, excelente comunidad de investigación, alta oferta cultural." data-desventajas="Gran demanda de ingreso que deja fuera a muchos aspirantes, centralización de trámites complejos.">
+            <div>
+                <span class="badge publica">Pública</span>
+                <h2>UDG</h2>
+                <p>Universidad de Guadalajara</p>
+                <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Guadalajara</p>
+            </div>
+            <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
         </div>
-        <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
-    </div>
 
-    <div class="card" data-nombre="UANL" data-tipo="publica" data-ventajas="Instalaciones deportivas de primer nivel, estrecha alianza con el sector empresarial del norte del país." data-desventajas="Costos de rectoría y cuotas internas más elevados en comparación con otras universidades públicas.">
-        <div>
-            <span class="badge publica">Pública</span>
-            <h2>UANL</h2>
-            <p>Universidad Autónoma de Nuevo León</p>
-            <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Monterrey</p>
+        <div class="card" data-nombre="BUAP" data-tipo="publica" data-ventajas="Complejos universitarios modernos y seguros, gran reconocimiento regional, excelentes programas de becas." data-desventajas="Cupos limitados en el área de la salud, tránsito complicado en los alrededores de Ciudad Universitaria Puebla.">
+            <div>
+                <span class="badge publica">Pública</span>
+                <h2>BUAP</h2>
+                <p>Benemérita Universidad Autónoma de Puebla</p>
+                <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Puebla</p>
+            </div>
+            <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
         </div>
-        <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
-    </div>
 
-    <div class="card" data-nombre="UABC" data-tipo="publica" data-ventajas="Ubicación estratégica fronteriza ideal para intercambios, planes de estudio modernos orientados a la industria global." data-desventajas="Clima extremo en sus campus (Mexicali), costos de vida elevados para estudiantes foráneos.">
-        <div>
-            <span class="badge publica">Pública</span>
-            <h2>UABC</h2>
-            <p>Universidad Autónoma de Baja California</p>
-            <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Baja California</p>
+        <div class="card" data-nombre="UAEM" data-tipo="publica" data-ventajas="Amplia cobertura en el Estado de México, buena oferta de educación a distancia, certificación constante de carreras." data-desventajas="Presupuesto variable que afecta el mantenimiento de prepas y facultades periféricas.">
+            <div>
+                <span class="badge publica">Pública</span>
+                <h2>UAEM</h2>
+                <p>Universidad Autónoma del Estado de México</p>
+                <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Estado de México</p>
+            </div>
+            <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
         </div>
-        <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
-    </div>
 
-    <div class="card" data-nombre="UAS" data-tipo="publica" data-ventajas="Gran impacto social en la región, accesibilidad económica y apoyo constante al deporte regional." data-desventajas="Inestabilidad política interna que llega a derivar en paros de labores intermitentes.">
-        <div>
-            <span class="badge publica">Pública</span>
-            <h2>UAS</h2>
-            <p>Universidad Autónoma de Sinaloa</p>
-            <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Sinaloa</p>
+        <div class="card" data-nombre="UANL" data-tipo="publica" data-ventajas="Instalaciones deportivas de primer nivel, estrecha alianza con el sector empresarial del norte del país." data-desventajas="Costos de rectoría y cuotas internas más elevados en comparación con otras universidades públicas.">
+            <div>
+                <span class="badge publica">Pública</span>
+                <h2>UANL</h2>
+                <p>Universidad Autónoma de Nuevo León</p>
+                <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Monterrey</p>
+            </div>
+            <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
         </div>
-        <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
-    </div>
 
-    <div class="card" data-nombre="UV" data-tipo="publica" data-ventajas="Destaca a nivel nacional en áreas de Artes, Humanidades y Ciencias Biológico-Agropecuarias, gran tradición cultural." data-desventajas="Dispersión geográfica de los campus que complica ciertos trámites administrativos interregionales.">
-        <div>
-            <span class="badge publica">Pública</span>
-            <h2>UV</h2>
-            <p>Universidad Veracruzana</p>
-            <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Veracruz</p>
+        <div class="card" data-nombre="UABC" data-tipo="publica" data-ventajas="Ubicación estratégica fronteriza ideal para intercambios, planes de estudio modernos orientados a la industria global." data-desventajas="Clima extremo en sus campus (Mexicali), costos de vida elevados para estudiantes foráneos.">
+            <div>
+                <span class="badge publica">Pública</span>
+                <h2>UABC</h2>
+                <p>Universidad Autónoma de Baja California</p>
+                <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Baja California</p>
+            </div>
+            <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
         </div>
-        <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
-    </div>
 
-    <div class="card" data-nombre="UAQ" data-tipo="publica" data-ventajas="Alto nivel académico, proyectos de investigación con financiamiento externo y desarrollo de patentes." data-desventajas="Procesos de admisión rigurosos, infraestructura en crecimiento para los campus ubicados en municipios rurales.">
-        <div>
-            <span class="badge publica">Pública</span>
-            <h2>UAQ</h2>
-            <p>Universidad Autónoma de Querétaro</p>
-            <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Querétaro</p>
+        <div class="card" data-nombre="UAS" data-tipo="publica" data-ventajas="Gran impacto social en la región, accesibilidad económica y apoyo constante al deporte regional." data-desventajas="Inestabilidad política interna que llega a derivar en paros de labores intermitentes.">
+            <div>
+                <span class="badge publica">Pública</span>
+                <h2>UAS</h2>
+                <p>Universidad Autónoma de Sinaloa</p>
+                <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Sinaloa</p>
+            </div>
+            <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
         </div>
-        <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
-    </div>
 
+        <div class="card" data-nombre="UV" data-tipo="publica" data-ventajas="Destaca a nivel nacional en áreas de Artes, Humanidades y Ciencias Biológico-Agropecuarias, gran tradición cultural." data-desventajas="Dispersión geográfica de los campus que complica ciertos trámites administrativos interregionales.">
+            <div>
+                <span class="badge publica">Pública</span>
+                <h2>UV</h2>
+                <p>Universidad Veracruzana</p>
+                <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Veracruz</p>
+            </div>
+            <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
+        </div>
+
+        <div class="card" data-nombre="UAQ" data-tipo="publica" data-ventajas="Alto nivel académico, proyectos de investigación con financiamiento externo y desarrollo de patentes." data-desventajas="Procesos de admisión rigurosos, infraestructura en crecimiento para los campus ubicados en municipios rurales.">
+            <div>
+                <span class="badge publica">Pública</span>
+                <h2>UAQ</h2>
+                <p>Universidad Autónoma de Querétaro</p>
+                <p class="ubicacion"><span class="material-icons" style="font-size:16px">place</span>Querétaro</p>
+            </div>
+            <button class="btn-info">Ver Detalles <span class="material-icons" style="font-size:16px">visibility</span></button>
+        </div>
+
+    </div>
 </section>
 
 <!-- SECCIÓN DE CONTACTO -->
@@ -659,7 +667,6 @@
 
     botones.forEach(boton => {
         boton.addEventListener('click', function(e) {
-            // Efecto Onda
             let x = e.clientX - e.target.getBoundingClientRect().left;
             let y = e.clientY - e.target.getBoundingClientRect().top;
 
@@ -671,7 +678,6 @@
             this.appendChild(ripple);
             setTimeout(() => ripple.remove(), 600);
 
-            // Rellenar datos
             const tarjetaPadre = this.closest('.card');
             const nombre = tarjetaPadre.getAttribute('data-nombre');
             const ventajas = tarjetaPadre.getAttribute('data-ventajas');
@@ -681,7 +687,6 @@
             modalVentajas.textContent = ventajas;
             modalDesventajas.textContent = desventajas;
 
-            // Retraso para ver animación del botón
             setTimeout(() => {
                 modal.classList.add('active');
                 modal.setAttribute('aria-hidden', 'false');
