@@ -85,35 +85,41 @@
             scroll-margin-top: 70px; 
         }
 
-        /* SECCIÓN INICIO (HERO) */
+        /* SECCIÓN INICIO (HERO / PRESENTACIÓN) */
         .hero-section {
-            background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200') no-repeat center center/cover;
+            background: linear-gradient(rgba(30, 60, 114, 0.9), rgba(42, 82, 152, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200') no-repeat center center/cover;
             color: white;
             text-align: center;
-            padding: 160px 20px 80px 20px;
+            padding: 180px 20px 100px 20px;
         }
 
         .hero-section h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin: 0 0 15px 0;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .hero-section p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 25px auto;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            opacity: 0.95;
+            line-height: 1.6;
         }
 
         .btn-cta {
             background: #00f2fe;
             color: #1e3c72;
-            padding: 12px 25px;
+            padding: 14px 30px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
             transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-cta:hover {
@@ -156,16 +162,16 @@
         .seccion-titulo {
             text-align: center;
             color: #1e3c72;
-            margin-top: 40px;
+            margin-top: 50px;
             margin-bottom: 10px;
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
 
         .contenedor {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            padding: 20px 20px 60px 20px;
+            padding: 20px 20px 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -263,56 +269,6 @@
                 opacity: 0;
             }
         }
-
-        /* SECCIÓN DE CONTACTO EXTRAS */
-        .contacto-section {
-            background: #eef2f7;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .form-contacto {
-            background: white;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: left;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #1e3c72;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            box-sizing: border-box;
-        }
-
-        .btn-enviar {
-            background: #2e7d32;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-            transition: background 0.3s;
-        }
-
-        .btn-enviar:hover { background: #1b5e20; }
 
         /* Modales Interactivos */
         .modal {
@@ -429,18 +385,19 @@
     <ul class="nav-links" id="navLinks">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#seccion-universidades">Universidades</a></li>
-        <li><a href="#contacto">Contacto</a></li>
     </ul>
 </header>
 
-<!-- SECCIÓN INICIO -->
-<section id="inicio" class="hero-section">
-    <h2>Encuentra tu Futuro Universitario</h2>
-    <p>Explora de forma interactiva los pros, contras y ubicaciones de las 12 instituciones públicas y privadas más importantes del país.</p>
-    <a href="#seccion-universidades" class="btn-cta">Comenzar Exploración</a>
+<!-- SECCIÓN INICIO (PANTALLA DE PRESENTACIÓN) -->
+<section id="inicio">
+    <div class="hero-section">
+        <h2>Directorio de Universidades de México</h2>
+        <p>Explora de forma interactiva y visual el listado de las 12 instituciones de educación superior públicas y privadas más destacadas de nuestro país, analizando sus principales ventajas y áreas de oportunidad.</p>
+        <a href="#seccion-universidades" class="btn-cta">Explorar Universidades <span class="material-icons">arrow_downward</span></a>
+    </div>
 </section>
 
-<!-- SECCIÓN UNIVERSIDADES -->
+<!-- SECCIÓN UNIVERSIDADES (MENÚ DE TARJETAS) -->
 <section id="seccion-universidades">
     <h2 class="seccion-titulo">Listado de Universidades</h2>
     <div class="search-container">
@@ -571,26 +528,6 @@
         </div>
 
     </div>
-</section>
-
-<!-- SECCIÓN DE CONTACTO -->
-<section id="contacto" class="contacto-section">
-    <h2 style="color:#1e3c72; margin-bottom:30px;">Contacto / Sugerencias</h2>
-    <form class="form-contacto" onsubmit="event.preventDefault(); alert('¡Mensaje escolar enviado con éxito!');">
-        <div class="form-group">
-            <label for="nombre">Nombre Completo:</label>
-            <input type="text" id="nombre" placeholder="Tu nombre..." required>
-        </div>
-        <div class="form-group">
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
-        </div>
-        <div class="form-group">
-            <label for="mensaje">Mensaje o Dudas:</label>
-            <textarea id="mensaje" rows="4" placeholder="Escribe tus dudas sobre las universidades..." required></textarea>
-        </div>
-        <button type="submit" class="btn-enviar">Enviar Mensaje</button>
-    </form>
 </section>
 
 <!-- Modal Estructurado -->
